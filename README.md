@@ -1,6 +1,12 @@
-# forniture_app
+# Projeto Modelo
 
-A new Flutter application.
+Estrutura de projeto para analise
+
+# Instalar dependencias
+
+Executar o comando: 
+
+> flutter pub get
 
 ## Getting Started
 
