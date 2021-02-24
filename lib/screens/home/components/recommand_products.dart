@@ -31,13 +31,8 @@ class RecommandProducts extends StatelessWidget {
         ),
         itemBuilder: (context, index) => ProductCard(
           product: products[index],
-          press: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsScreen(product: products[index]),
-                ));
-          },
+          press: () => Navigator.pushNamed(context, DetailsScreen.routeName,
+              arguments: ProductDetailsArguments(product: products[index])),
         ),
       ),
     );

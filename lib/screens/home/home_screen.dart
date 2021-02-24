@@ -5,6 +5,8 @@ import 'package:forniture_app/screens/home/components/body.dart';
 import 'package:forniture_app/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
+  static String routeName = "/home";
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
