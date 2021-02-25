@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:forniture_app/constants.dart';
 import 'package:forniture_app/screens/home/components/body.dart';
@@ -31,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             "assets/icons/scan.svg",
             height: SizeConfig.defaultSize * 2.4,
           ),
-          onPressed: () {},
+          onPressed: () => scanBarCode(),
         ),
         Center(
           child: Text(
@@ -44,5 +46,16 @@ class HomeScreen extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+Future<void> scanBarCode() async {
+  String barCode;
+  try {
+    barCode = await FlutterBarcodeScanner.scanBarcode(
+        "#ff6666", "Cancel", true, ScanMode.BARCODE);
+    print(barCode);
+  } on PlatformException {
+    barCode = "Failed to get platform version.";
   }
 }
