@@ -4,6 +4,7 @@ import 'package:forniture_app/shared/title_text.dart';
 import 'package:forniture_app/services/fetchCategories.dart';
 import 'package:forniture_app/size_config.dart';
 
+import '../../../env.dart';
 import 'categories.dart';
 import 'recommand_products.dart';
 
@@ -20,7 +21,7 @@ class Body extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(defaultSize * 2),
               child: TitleText(
-                title: "Categorias",
+                title: "Categorias" + Env.value.baseUrl + 'aa',
               ),
             ),
             FutureBuilder(
